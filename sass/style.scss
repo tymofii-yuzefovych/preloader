@@ -1,0 +1,53 @@
+body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.preloader {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #000;
+    .loader {
+        position: relative;
+        background: #000;
+        color: #fff;
+        font-size: 36px;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 5px;
+        padding: 5px 10px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 70px;
+            height: 100%;
+            background: #fff;
+            animation: animate 2.5s linear infinite;
+        }
+        span {
+            color: #fff;
+            mix-blend-mode: difference;
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: calc(100% - 70px);
+    }
+    100% {
+        left: 0;
+    }
+}
